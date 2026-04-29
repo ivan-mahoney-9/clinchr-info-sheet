@@ -37,7 +37,7 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding: 48px 20px;
+  padding: 40px 18px;
 }
 
 .page {
@@ -53,7 +53,7 @@ body {
 /* ── HEADER ── */
 .header {
   background: var(--blue);
-  padding: 44px 56px 40px;
+  padding: 36px 45px 30px;
   border-bottom: 3px solid var(--navy);
   flex-shrink: 0;
 }
@@ -62,12 +62,12 @@ body {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 
 .wordmark {
   font-family: var(--display);
-  font-size: 52px;
+  font-size: 48px;
   color: var(--navy);
   letter-spacing: 3px;
   line-height: 1;
@@ -410,6 +410,7 @@ body {
   </div>
 
   <!-- STAT BAR -->
+   # Omnisend stat about 67% of Brits using AI for shopping, Microsoft stat about 3x higher conversion from AI agent referrals vs search, and a stat about 3 recommendations per query with one winner to highlight the competitive nature of the new shopping landscape.
   <div class="stat-bar">
     <div class="stat-cell">
       <div class="stat-num">67%</div>
@@ -442,10 +443,10 @@ body {
         <div class="col-heading">WHAT'S HAPPENING WITHOUT YOU</div>
         <ul class="check-list">
           <li>Google AI Mode completes purchases without the shopper visiting your store</li>
-          <li>AI buyers rank retailers on data quality and trust — not ad spend</li>
+          <li>AI buyers rank retailers on data quality and trust — not ad spend or SEO</li>
           <li>Walmart, Target and Shopify are live on the new agentic commerce layer now</li>
           <li>Retailers without agent infrastructure are losing sales invisible to their analytics</li>
-          <li>The window of opportunity to prepare for this is measured in months, not years</li>
+          <li>The preparation window is measured in months, not years</li>
         </ul>
       </div>
     </div>
@@ -475,12 +476,12 @@ body {
         <div class="flow-step">
           <div class="flow-num">03</div>
           <div class="flow-title">Real-time negotiation</div>
-          <div class="flow-body">Clinchr presents your optimal offer — live price, stock, promotions — calibrated to win this buyer.</div>
+          <div class="flow-body">Clinchr presents your optimal offer — live price, stock, promotions and product data — calibrated to win this buyer.</div>
         </div>
         <div class="flow-step">
           <div class="flow-num">04</div>
           <div class="flow-title">Sale closed</div>
-          <div class="flow-body">Buying agent selects your product. Transaction completes. Revenue lands.</div>
+          <div class="flow-body"> The buying agent selects your product. The transaction completes. Revenue lands.</div>
         </div>
       </div>
     </div>
@@ -491,7 +492,7 @@ body {
         <div class="eyebrow">Why Clinchr</div>
         <div class="benefit-item">
           <div class="benefit-title">Negotiates, not just responds</div>
-          <div class="benefit-body">Clinchr actively optimises each response to the specific buyer's signals — maximising conversion, not just discoverability.</div>
+          <div class="benefit-body">Clinchr actively optimises each response to the specific buyer's signals — maximising conversion, not just discovery.</div>
         </div>
         <div class="benefit-item">
           <div class="benefit-title">Margin-aware by design</div>
@@ -503,7 +504,7 @@ body {
         </div>
         <div class="benefit-item">
           <div class="benefit-title">You stay Merchant of Record</div>
-          <div class="benefit-body">Your customer relationship, your data, your checkout. Clinchr is your representative and slots in to your techstack seamlessly without needing any changes.</div>
+          <div class="benefit-body">Your customer relationship, your data, your checkout. Clinchr is your representative, and slots in seamlessly to your techstack</div>
         </div>
       </div>
 
@@ -522,8 +523,8 @@ body {
         <div class="sidebar-block dark">
           <div class="sb-label lt">Get early access</div>
           <div class="cta-heading">GET YOUR AGENT IN THE ROOM.</div>
-          <div class="cta-body">Early access open to retailers ready to be at the table before it fills up.</div>
-          <div class="cta-url">clinchr.io</div>
+          <div class="cta-body">Early access open to retailers ready to be at the table before their competitors.</div>
+          <div class="cta-url">clinchr.ai</div>
         </div>
       </div>
     </div>
