@@ -412,14 +412,15 @@ body {
   </div>
 
   <!-- STAT BAR -->
+   # Omnisend stat about 67% of Brits using AI for shopping, Microsoft stat about 3x higher conversion from AI agent referrals vs search, and a stat about 3 recommendations per query with one winner to highlight the competitive nature of the new shopping landscape.
   <div class="stat-bar">
     <div class="stat-cell">
       <div class="stat-num">67%</div>
-      <div class="stat-label">of Brits use AI for shopping</div> # Omnisend stat 
+      <div class="stat-label">of Brits use AI for shopping</div> 
     </div>
     <div class="stat-cell">
       <div class="stat-num">3×</div>
-      <div class="stat-label">higher conversion from<br>AI agent referrals vs. search</div> #microsoft & many others
+      <div class="stat-label">higher conversion from<br>AI agent referrals vs. search</div> 
     </div>
     <div class="stat-cell">
       <div class="stat-num">3</div>
