@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinchr — Win sales in the age of agentic commerce</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;1,400;1,600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+@media print {
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { box-shadow: none !important; }
+}
+
+:root {
+  --blue:     #45b8e0;
+  --blue-dk:  #2e9ec7;
+  --blue-pl:  #d6eff8;
+  --navy:     #162030;
+  --navy2:    #1e2d40;
+  --white:    #ffffff;
+  --off:      #f4fafd;
+  --muted:    rgba(22,32,48,0.5);
+  --rule:     rgba(22,32,48,0.1);
+  --display:  'Bebas Neue', sans-serif;
+  --cond:     'Barlow Condensed', sans-serif;
+  --body:     'Barlow', sans-serif;
+}
+
+body {
+  background: #c8e8f4;
+  font-family: var(--body);
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 48px 20px;
+}
+
+.page {
+  background: var(--white);
+  width: 794px;
+  min-height: 1050px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 40px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--blue);
+  padding: 44px 56px 40px;
+  border-bottom: 3px solid var(--navy);
+  flex-shrink: 0;
+}
+
+.header-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.wordmark {
+  font-family: var(--display);
+  font-size: 52px;
+  color: var(--navy);
+  letter-spacing: 3px;
+  line-height: 1;
+}
+
+.header-tagline {
+  font-family: var(--body);
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  padding-bottom: 6px;
+}
+
+.header-headline {
+  font-family: var(--display);
+  font-size: 38px;
+  color: var(--navy);
+  letter-spacing: 0.5px;
+  line-height: 1.08;
+  max-width: 560px;
+}
+
+/* ── STAT BAR ── */
+.stat-bar {
+  background: var(--navy);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  flex-shrink: 0;
+}
+
+.stat-cell {
+  padding: 16px 28px;
+  border-right: 1px solid rgba(255,255,255,0.07);
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.stat-cell:last-child { border-right: none; }
+
+.stat-num {
+  font-family: var(--display);
+  font-size: 32px;
+  color: var(--blue);
+  letter-spacing: 1px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.45;
+}
+
+/* ── BODY ── */
+.body {
+  padding: 36px 56px 44px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── PROBLEM ── */
+.problem-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  font-family: var(--cond);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blue-dk);
+  margin-bottom: 10px;
+}
+
+.col-heading {
+  font-family: var(--display);
+  font-size: 21px;
+  color: var(--navy);
+  line-height: 1.12;
+  margin-bottom: 12px;
+  letter-spacing: 0.3px;
+}
+
+.body-copy {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+.body-copy strong { color: var(--navy); font-weight: 600; }
+
+.check-list {
+  list-style: none;
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.check-list li {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.5;
+  padding-left: 16px;
+  position: relative;
+}
+.check-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--blue-dk);
+  font-weight: 600;
+}
+
+/* ── SOLUTION ── */
+.solution-row {
+  background: var(--blue);
+  margin: 0 -56px;
+  padding: 26px 56px;
+  margin-bottom: 32px;
+}
+
+.solution-inner {
+  display: grid;
+  grid-template-columns: 1fr 2.2fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.solution-pull {
+  font-family: var(--display);
+  font-size: 26px;
+  color: var(--navy);
+  letter-spacing: 0.3px;
+  line-height: 1.1;
+}
+
+.solution-body {
+  font-size: 13px;
+  color: rgba(22,32,48,0.72);
+  line-height: 1.75;
+}
+
+/* ── FLOW ── */
+.flow-section {
+  margin-bottom: 32px;
+}
+
+.flow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--rule);
+  margin-top: 14px;
+}
+
+.flow-step {
+  padding: 18px 16px;
+  border-right: 1px solid var(--rule);
+  background: var(--off);
+}
+.flow-step:last-child { border-right: none; }
+
+.flow-num {
+  font-family: var(--display);
+  font-size: 36px;
+  color: var(--blue-pl);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.flow-title {
+  font-family: var(--cond);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--blue-dk);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.flow-body {
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ── BOTTOM GRID ── */
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 40px;
+  flex: 1;
+}
+
+.benefits-col {}
+
+.benefit-item {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.benefit-item:first-child { padding-top: 0; }
+.benefit-item:last-child { border-bottom: none; }
+
+.benefit-title {
+  font-family: var(--cond);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 3px;
+}
+
+.benefit-body {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* SIDEBAR */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sidebar-block {
+  background: var(--off);
+  border: 1px solid var(--rule);
+  padding: 18px 20px;
+}
+
+.sidebar-block.dark {
+  background: var(--navy);
+  border-color: var(--navy);
+}
+
+.sb-label {
+  font-family: var(--cond);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blue-dk);
+  margin-bottom: 10px;
+}
+.sb-label.lt { color: var(--blue); }
+
+.protocol-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+
+.ptag {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 3px 8px;
+  font-family: var(--cond);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--navy2);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.cta-heading {
+  font-family: var(--display);
+  font-size: 22px;
+  color: var(--white);
+  letter-spacing: 0.3px;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.cta-body {
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.cta-url {
+  font-family: var(--cond);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--blue);
+  padding: 14px 56px;
+  border-top: 3px solid var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.footer-left {
+  font-family: var(--display);
+  font-size: 18px;
+  color: var(--navy);
+  letter-spacing: 2px;
+}
+
+.footer-sub {
+  font-family: var(--body);
+  font-size: 11px;
+  font-style: italic;
+  color: var(--white);
+  margin-top: 2px;
+}
+
+.footer-note {
+  font-size: 10px;
+  color: rgba(22,32,48,0.4);
+  text-align: right;
+  line-height: 1.7;
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div class="wordmark">CLINCHR</div>
+      <div class="header-tagline">Win sales in the age of agentic commerce</div>
+    </div>
+    <div class="header-headline">YOUR NEGOTIATOR<br>IN THE AGE OF AI SHOPPING.</div>
+  </div>
+
+  <!-- STAT BAR -->
+  <div class="stat-bar">
+    <div class="stat-cell">
+      <div class="stat-num">900M</div>
+      <div class="stat-label">weekly users on<br>AI shopping surfaces</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">30×</div>
+      <div class="stat-label">higher conversion from<br>AI agent referrals vs. search</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">1</div>
+      <div class="stat-label">recommendation per query —<br>one winner. Are you it?</div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- PROBLEM -->
+    <div class="problem-row">
+      <div>
+        <div class="eyebrow">The shift</div>
+        <div class="col-heading">SHOPPERS DON'T SHOP ANYMORE. THEIR AI DOES.</div>
+        <div class="body-copy">
+          Consumers have handed purchase decisions to AI agents — ChatGPT, Gemini, Perplexity. These agents <strong>negotiate directly with retail systems</strong>, compare offers by data quality and trust, and complete transactions autonomously. Your website, your ads — none of it gets seen. <strong>Most retailers aren't in the conversation.</strong>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow">The reality</div>
+        <div class="col-heading">WHAT'S HAPPENING WITHOUT YOU</div>
+        <ul class="check-list">
+          <li>Google AI Mode completes purchases without the shopper visiting your store</li>
+          <li>AI buyers rank retailers on data quality and trust — not ad spend</li>
+          <li>Walmart, Target and Shopify are live on the new agentic commerce layer now</li>
+          <li>Retailers without agent infrastructure are losing sales invisible to their analytics</li>
+          <li>The early-mover window is measured in months, not years</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SOLUTION -->
+    <div class="solution-row">
+      <div class="solution-inner">
+        <div class="solution-pull">AN EXPERT NEGOTIATOR ON YOUR SIDE OF THE TABLE.</div>
+        <div class="solution-body">When a consumer's buying agent enters the market, Clinchr's agent responds in real time — reading buyer signals, presenting your optimal offer, and calibrating every exchange to win the sale. Live pricing. Live inventory. Your commercial priorities built in. Tireless, autonomous, across every AI surface simultaneously.</div>
+      </div>
+    </div>
+
+    <!-- HOW IT WORKS -->
+    <div class="flow-section">
+      <div class="eyebrow">How it works</div>
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-num">01</div>
+          <div class="flow-title">Buyer agent enters the market</div>
+          <div class="flow-body">A shopper instructs ChatGPT or Gemini to find and buy the best product for their needs.</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">02</div>
+          <div class="flow-title">Clinchr engages</div>
+          <div class="flow-body">Your agent reads buyer context — intent, budget, constraints — and prepares your response.</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">03</div>
+          <div class="flow-title">Real-time negotiation</div>
+          <div class="flow-body">Clinchr presents your optimal offer — live price, stock, promotions — calibrated to win this buyer.</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">04</div>
+          <div class="flow-title">Sale closed</div>
+          <div class="flow-body">Buying agent selects your product. Transaction completes. Revenue lands.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BENEFITS + SIDEBAR -->
+    <div class="bottom-grid">
+      <div class="benefits-col">
+        <div class="eyebrow">Why Clinchr</div>
+        <div class="benefit-item">
+          <div class="benefit-title">Negotiates, not just responds</div>
+          <div class="benefit-body">Clinchr actively optimises each response to the specific buyer's signals — maximising conversion, not just discoverability.</div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-title">Margin-aware by design</div>
+          <div class="benefit-body">You set commercial priorities. Clinchr negotiates within them — surfacing high-margin SKUs without sacrificing the accuracy that builds agent trust.</div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-title">One integration, every surface</div>
+          <div class="benefit-body">ChatGPT, Gemini, Copilot, Perplexity — and every surface that launches next year. Represented everywhere, zero incremental effort.</div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-title">You stay Merchant of Record</div>
+          <div class="benefit-body">Your customer relationship, your data, your checkout. Clinchr is your representative — not a middleman taking a cut.</div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="sidebar-block">
+          <div class="sb-label">Compatible with</div>
+          <div class="protocol-tags">
+            <span class="ptag">Google UCP</span>
+            <span class="ptag">OpenAI ACP</span>
+            <span class="ptag">MCP</span>
+            <span class="ptag">Agent2Agent</span>
+            <span class="ptag">AP2</span>
+            <span class="ptag">REST</span>
+          </div>
+        </div>
+        <div class="sidebar-block dark">
+          <div class="sb-label lt">Get early access</div>
+          <div class="cta-heading">GET YOUR AGENT IN THE ROOM.</div>
+          <div class="cta-body">Early access open to retailers ready to be at the table before it fills up.</div>
+          <div class="cta-url">clinchr.io</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div>
+      <div class="footer-left">CLINCHR</div>
+      <div class="footer-sub">Win sales in the age of agentic commerce</div>
+    </div>
+    <div class="footer-note">Concept document — confidential &nbsp;·&nbsp; © 2026 Clinchr</div>
+  </div>
+
+</div>
+</body>
+</html>
