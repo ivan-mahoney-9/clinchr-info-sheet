@@ -1,4 +1,3 @@
-#making this change to practice PRs
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -415,16 +414,16 @@ body {
   <!-- STAT BAR -->
   <div class="stat-bar">
     <div class="stat-cell">
-      <div class="stat-num">900M</div>
-      <div class="stat-label">weekly users on<br>AI shopping surfaces</div>
+      <div class="stat-num">67%</div>
+      <div class="stat-label">of Brits use AI for shopping</div>
     </div>
     <div class="stat-cell">
-      <div class="stat-num">30×</div>
+      <div class="stat-num">3×</div>
       <div class="stat-label">higher conversion from<br>AI agent referrals vs. search</div>
     </div>
     <div class="stat-cell">
-      <div class="stat-num">1</div>
-      <div class="stat-label">recommendation per query —<br>one winner. Are you it?</div>
+      <div class="stat-num">3 <br>1</div>
+      <div class="stat-label">recommendation per query —<br> winner. Are you it?</div>
     </div>
   </div>
 
@@ -437,7 +436,7 @@ body {
         <div class="eyebrow">The shift</div>
         <div class="col-heading">SHOPPERS DON'T SHOP ANYMORE. THEIR AI DOES.</div>
         <div class="body-copy">
-          Consumers have handed purchase decisions to AI agents — ChatGPT, Gemini, Perplexity. These agents <strong>negotiate directly with retail systems</strong>, compare offers by data quality and trust, and complete transactions autonomously. Your website, your ads — none of it gets seen. <strong>Most retailers aren't in the conversation.</strong>
+          Consumers have handed purchase decisions to AI agents — ChatGPT, Gemini, Perplexity. These agents <strong>interact directly with retail systems</strong>, compare offers by data quality and trust, and complete transactions autonomously. Your website, your ads, and SEO — none of it gets seen. <strong>Most retailers aren't in the conversation.</strong>
         </div>
       </div>
       <div>
@@ -448,7 +447,7 @@ body {
           <li>AI buyers rank retailers on data quality and trust — not ad spend</li>
           <li>Walmart, Target and Shopify are live on the new agentic commerce layer now</li>
           <li>Retailers without agent infrastructure are losing sales invisible to their analytics</li>
-          <li>The early-mover window is measured in months, not years</li>
+          <li>The window of opportunity to prepare for this is measured in months, not years</li>
         </ul>
       </div>
     </div>
@@ -468,7 +467,7 @@ body {
         <div class="flow-step">
           <div class="flow-num">01</div>
           <div class="flow-title">Buyer agent enters the market</div>
-          <div class="flow-body">A shopper instructs ChatGPT or Gemini to find and buy the best product for their needs.</div>
+          <div class="flow-body">A shopper instructs ChatGPT, Gemini or any AI agent to find and buy the best product for their needs.</div>
         </div>
         <div class="flow-step">
           <div class="flow-num">02</div>
@@ -506,7 +505,7 @@ body {
         </div>
         <div class="benefit-item">
           <div class="benefit-title">You stay Merchant of Record</div>
-          <div class="benefit-body">Your customer relationship, your data, your checkout. Clinchr is your representative — not a middleman taking a cut.</div>
+          <div class="benefit-body">Your customer relationship, your data, your checkout. Clinchr is your representative and slots in to your techstack seamlessly without needing any changes.</div>
         </div>
       </div>
 
