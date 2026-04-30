@@ -10,9 +10,11 @@
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+@page { size: A4; margin: 0; }
+
 @media print {
-  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .page { box-shadow: none !important; }
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; background: #ffffff; padding: 0; }
+  .page { box-shadow: none !important; margin: 0 !important; }
 }
 
 :root {
@@ -53,9 +55,10 @@ body {
 /* ── HEADER ── */
 .header {
   background: var(--blue);
-  padding: 44px 56px 40px;
+  padding: 56px 64px 56px;
   border-bottom: 3px solid var(--navy);
   flex-shrink: 0;
+  page-break-inside: avoid;
 }
 
 .header-top {
@@ -73,6 +76,35 @@ body {
   line-height: 1;
 }
 
+.brand-mark {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.brand-mark svg { width: 100%; height: 100%; }
+.brand-mark--mini { width: 32px; height: 32px; }
+
+.page-mini-header {
+  background: var(--blue);
+  padding: 18px 56px;
+  border-bottom: 2px solid var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+.page-mini-header .wordmark { font-size: 28px; letter-spacing: 2px; }
+.page-mini-header .mini-tag {
+  font-family: var(--cond);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
 .header-tagline {
   font-family: var(--body);
   font-size: 12px;
@@ -85,11 +117,11 @@ body {
 
 .header-headline {
   font-family: var(--display);
-  font-size: 38px;
+  font-size: 44px;
   color: var(--navy);
   letter-spacing: 0.5px;
   line-height: 1.08;
-  max-width: 560px;
+  max-width: 600px;
 }
 
 /* ── STAT BAR ── */
@@ -98,20 +130,21 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   flex-shrink: 0;
+  page-break-inside: avoid;
 }
 
 .stat-cell {
-  padding: 16px 28px;
+  padding: 38px 32px;
   border-right: 1px solid rgba(255,255,255,0.07);
   display: flex;
-  align-items: baseline;
-  gap: 12px;
+  align-items: center;
+  gap: 20px;
 }
 .stat-cell:last-child { border-right: none; }
 
 .stat-num {
   font-family: var(--display);
-  font-size: 32px;
+  font-size: 52px;
   color: var(--blue);
   letter-spacing: 1px;
   line-height: 1;
@@ -119,28 +152,25 @@ body {
 }
 
 .stat-label {
-  font-size: 11px;
-  color: rgba(255,255,255,0.5);
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
   line-height: 1.45;
 }
 
 /* ── BODY ── */
 .body {
-  padding: 36px 56px 44px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+  padding: 36px 64px 36px;
 }
 
 /* ── PROBLEM ── */
 .problem-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  padding-bottom: 32px;
+  gap: 44px;
+  padding-bottom: 28px;
   border-bottom: 1px solid var(--rule);
-  margin-bottom: 32px;
+  margin-bottom: 28px;
+  page-break-inside: avoid;
 }
 
 .eyebrow {
@@ -194,9 +224,10 @@ body {
 /* ── SOLUTION ── */
 .solution-row {
   background: var(--blue);
-  margin: 0 -56px;
-  padding: 26px 56px;
-  margin-bottom: 32px;
+  margin: 0 -64px;
+  padding: 36px 64px;
+  margin-bottom: 56px;
+  page-break-inside: avoid;
 }
 
 .solution-inner {
@@ -222,20 +253,22 @@ body {
 
 /* ── FLOW ── */
 .flow-section {
-  margin-bottom: 32px;
+  margin-bottom: 0;
+  page-break-inside: avoid;
 }
 
 .flow {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border: 1px solid var(--rule);
-  margin-top: 14px;
+  margin-top: 16px;
 }
 
 .flow-step {
-  padding: 18px 16px;
+  padding: 22px 18px;
   border-right: 1px solid var(--rule);
   background: var(--off);
+  page-break-inside: avoid;
 }
 .flow-step:last-child { border-right: none; }
 
@@ -268,11 +301,11 @@ body {
 .bottom-grid {
   display: grid;
   grid-template-columns: 3fr 2fr;
-  gap: 40px;
-  flex: 1;
+  gap: 44px;
+  page-break-inside: avoid;
+  padding-top: 36px;
+  padding-bottom: 8px;
 }
-
-.benefits-col {}
 
 .benefit-item {
   padding: 12px 0;
@@ -365,15 +398,105 @@ body {
   letter-spacing: 0.08em;
 }
 
+/* ── PILOT ── */
+.pilot-row {
+  background: var(--navy);
+  padding: 44px 64px 48px;
+  flex-shrink: 0;
+  page-break-inside: avoid;
+}
+
+.pilot-header {
+  margin-bottom: 18px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 24px;
+  align-items: end;
+}
+
+.pilot-eyebrow {
+  font-family: var(--cond);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 6px;
+}
+
+.pilot-heading {
+  font-family: var(--display);
+  font-size: 26px;
+  color: var(--white);
+  letter-spacing: 0.3px;
+  line-height: 1.1;
+}
+
+.pilot-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+  text-align: right;
+}
+
+.pilot-sub a {
+  font-family: var(--cond);
+  color: var(--blue);
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  font-size: 13px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.pilot-stages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.pilot-stage {
+  border-left: 2px solid var(--blue);
+  padding: 2px 0 2px 14px;
+}
+
+.pilot-num {
+  font-family: var(--display);
+  font-size: 22px;
+  color: var(--blue);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.pilot-title {
+  font-family: var(--cond);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.pilot-body {
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.55;
+}
+
 /* ── FOOTER ── */
 .footer {
   background: var(--blue);
-  padding: 14px 56px;
+  padding: 18px 64px;
   border-top: 3px solid var(--navy);
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-shrink: 0;
+  page-break-inside: avoid;
 }
 
 .footer-left {
@@ -406,24 +529,32 @@ body {
   <div class="header">
     <div class="header-top">
       <div class="wordmark">CLINCHR</div>
-      <div class="header-tagline">Win sales in the age of agentic commerce</div>
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 17h32l-3 23a3 3 0 0 1-3 3H14a3 3 0 0 1-3-3L8 17z" fill="#162030"/>
+          <rect x="7" y="15" width="34" height="4" rx="1.5" fill="#162030"/>
+          <path d="M18 15V11a6 6 0 0 1 12 0v4" stroke="#162030" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <path d="M16 28c1-2 3-2 4 0" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+          <path d="M28 28c1-2 3-2 4 0" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
     </div>
-    <div class="header-headline">YOUR NEGOTIATOR<br>IN THE AGE OF AI SHOPPING.</div>
+    <div class="header-headline">WIN SALES<br>IN THE AGE OF AI SHOPPING.</div>
   </div>
 
   <!-- STAT BAR -->
   <div class="stat-bar">
     <div class="stat-cell">
-      <div class="stat-num">900M</div>
-      <div class="stat-label">weekly users on<br>AI shopping surfaces</div>
+      <div class="stat-num">67%</div>
+      <div class="stat-label">of Brits use AI<br>for shopping</div>
     </div>
     <div class="stat-cell">
-      <div class="stat-num">30×</div>
+      <div class="stat-num">3×</div>
       <div class="stat-label">higher conversion from<br>AI agent referrals vs. search</div>
     </div>
     <div class="stat-cell">
-      <div class="stat-num">1</div>
-      <div class="stat-label">recommendation per query —<br>one winner. Are you it?</div>
+      <div class="stat-num">3</div>
+      <div class="stat-label">recommendations per query —<br>1 winner. Are you it?</div>
     </div>
   </div>
 
@@ -434,9 +565,9 @@ body {
     <div class="problem-row">
       <div>
         <div class="eyebrow">The shift</div>
-        <div class="col-heading">SHOPPERS DON'T SHOP ANYMORE. THEIR AI DOES.</div>
+        <div class="col-heading">MANY SHOPPERS WON'T SHOP ANYMORE. THEIR AI WILL.</div>
         <div class="body-copy">
-          Consumers have handed purchase decisions to AI agents — ChatGPT, Gemini, Perplexity. These agents <strong>negotiate directly with retail systems</strong>, compare offers by data quality and trust, and complete transactions autonomously. Your website, your ads — none of it gets seen. <strong>Most retailers aren't in the conversation.</strong>
+          Consumers are handing over purchase decisions to AI agents — ChatGPT, Gemini, Perplexity. These agents <strong>interact directly with retail systems</strong>, compare offers by data quality and trust, and complete transactions autonomously. Your website, your ads, and SEO — none of it gets seen. <strong>Most retailers aren't in the conversation.</strong>
         </div>
       </div>
       <div>
@@ -445,9 +576,8 @@ body {
         <ul class="check-list">
           <li>Google AI Mode completes purchases without the shopper visiting your store</li>
           <li>AI buyers rank retailers on data quality and trust — not ad spend</li>
-          <li>Walmart, Target and Shopify are live on the new agentic commerce layer now</li>
           <li>Retailers without agent infrastructure are losing sales invisible to their analytics</li>
-          <li>The early-mover window is measured in months, not years</li>
+          <li>The window of opportunity to prepare for this is measured in months, not years</li>
         </ul>
       </div>
     </div>
@@ -455,8 +585,8 @@ body {
     <!-- SOLUTION -->
     <div class="solution-row">
       <div class="solution-inner">
-        <div class="solution-pull">AN EXPERT NEGOTIATOR ON YOUR SIDE OF THE TABLE.</div>
-        <div class="solution-body">When a consumer's buying agent enters the market, Clinchr's agent responds in real time — reading buyer signals, presenting your optimal offer, and calibrating every exchange to win the sale. Live pricing. Live inventory. Your commercial priorities built in. Tireless, autonomous, across every AI surface simultaneously.</div>
+        <div class="solution-pull">AN EXPERT SALESPERSON ON YOUR SIDE OF THE TABLE.</div>
+        <div class="solution-body">When a consumer's buying agent enters the market, Clinchr's agent responds in real time — reading buyer signals, presenting your value, and calibrating every exchange to win the sale. Live pricing. Live inventory. Your commercial priorities built in. Tireless, autonomous, across every AI surface simultaneously.</div>
       </div>
     </div>
 
@@ -467,7 +597,7 @@ body {
         <div class="flow-step">
           <div class="flow-num">01</div>
           <div class="flow-title">Buyer agent enters the market</div>
-          <div class="flow-body">A shopper instructs ChatGPT or Gemini to find and buy the best product for their needs.</div>
+          <div class="flow-body">A shopper instructs ChatGPT, Gemini or any AI agent to find and buy the best product for their needs.</div>
         </div>
         <div class="flow-step">
           <div class="flow-num">02</div>
@@ -476,8 +606,8 @@ body {
         </div>
         <div class="flow-step">
           <div class="flow-num">03</div>
-          <div class="flow-title">Real-time negotiation</div>
-          <div class="flow-body">Clinchr presents your optimal offer — live price, stock, promotions — calibrated to win this buyer.</div>
+          <div class="flow-title">Real-time interaction</div>
+          <div class="flow-body">Clinchr presents your optimal offer — specific data and live price, stock and promotions — calibrated to win this buyer.</div>
         </div>
         <div class="flow-step">
           <div class="flow-num">04</div>
@@ -492,12 +622,8 @@ body {
       <div class="benefits-col">
         <div class="eyebrow">Why Clinchr</div>
         <div class="benefit-item">
-          <div class="benefit-title">Negotiates, not just responds</div>
+          <div class="benefit-title">Convince, not just respond</div>
           <div class="benefit-body">Clinchr actively optimises each response to the specific buyer's signals — maximising conversion, not just discoverability.</div>
-        </div>
-        <div class="benefit-item">
-          <div class="benefit-title">Margin-aware by design</div>
-          <div class="benefit-body">You set commercial priorities. Clinchr negotiates within them — surfacing high-margin SKUs without sacrificing the accuracy that builds agent trust.</div>
         </div>
         <div class="benefit-item">
           <div class="benefit-title">One integration, every surface</div>
@@ -505,7 +631,7 @@ body {
         </div>
         <div class="benefit-item">
           <div class="benefit-title">You stay Merchant of Record</div>
-          <div class="benefit-body">Your customer relationship, your data, your checkout. Clinchr is your representative — not a middleman taking a cut.</div>
+          <div class="benefit-body">Your customer relationship, your data, your checkout. Clinchr is your representative and slots in to your techstack seamlessly.</div>
         </div>
       </div>
 
@@ -525,12 +651,43 @@ body {
           <div class="sb-label lt">Get early access</div>
           <div class="cta-heading">GET YOUR AGENT IN THE ROOM.</div>
           <div class="cta-body">Early access open to retailers ready to be at the table before it fills up.</div>
-          <div class="cta-url">clinchr.io</div>
+          <div class="cta-url">clinchr.ai <br> enquiries@clinchr.ai</div>
         </div>
       </div>
     </div>
 
   </div>
+
+  <!-- FREE PILOT -->
+  <div class="pilot-row">
+      <div class="pilot-header">
+        <div>
+          <div class="pilot-eyebrow">Free Pilot</div>
+          <div class="pilot-heading">TALK TO US ABOUT A FREE PILOT.</div>
+        </div>
+        <div class="pilot-sub">
+          Three stages to get you AI-ready.<br>
+          <a href="mailto:enquiries@clinchr.ai">enquiries@clinchr.ai</a>
+        </div>
+      </div>
+      <div class="pilot-stages">
+        <div class="pilot-stage">
+          <div class="pilot-num">01</div>
+          <div class="pilot-title">AI Visibility Analysis</div>
+          <div class="pilot-body">Access the Clinchr platform to see how visible your products are across AI shopping surfaces today.</div>
+        </div>
+        <div class="pilot-stage">
+          <div class="pilot-num">02</div>
+          <div class="pilot-title">Product Discovery Optimisation</div>
+          <div class="pilot-body">Tune product data and signals so AI agents surface and rank you correctly.</div>
+        </div>
+        <div class="pilot-stage">
+          <div class="pilot-num">03</div>
+          <div class="pilot-title">Agent Integration</div>
+          <div class="pilot-body">Deploy your Clinchr agent so it's selling live across every AI surface.</div>
+        </div>
+      </div>
+    </div>
 
   <!-- FOOTER -->
   <div class="footer">
